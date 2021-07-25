@@ -1,4 +1,5 @@
 import os
+from os import environ 
 
 DB_DETAILS = {
     'dev': {
