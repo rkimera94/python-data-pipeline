@@ -1,6 +1,5 @@
 import os
 from os import environ 
-
 DB_DETAILS = {
     'dev': {
         'DB_TYPE': 'mysql',
@@ -12,10 +11,10 @@ DB_DETAILS = {
     },
     'source': {
         'DB_TYPE': 'postgres',
-        'DB_NAME': 'terp',
+        'DB_NAME': environ.get('DB_DATABASE_NAME'),
         'DB_HOST': 'localhost',
-        'DB_USER': 'postgres',
-        'DB_PASS': '123@Ht'
+        'DB_USER':'postgres',
+        'DB_PASS': environ.get('DB_PASSWORD'),
 
     },
     'target': {
