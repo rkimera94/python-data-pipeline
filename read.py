@@ -9,7 +9,7 @@ def read_table(db_details, table_name, limit=0):
 
     cursor = connection.cursor()
     if limit == 0:
-        query = f'SELECT * FROM {table_name} LIMIT 1'
+        query = f'SELECT * FROM {table_name}'
     else:
         query = f'SELECT * FROM {table_name} LIMIT{limit}'
     cursor.execute(query)
