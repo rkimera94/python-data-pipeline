@@ -43,13 +43,11 @@ def pg_db_connection(db_host, db_name, db_user, db_pass):
                                   )
     return connection
 
-#conn = psycopg2.connect("host='localhost' dbname='terp' user='postgres' password='123@Ht'")
-#cur = conn.cursor()
 
 
 def pg_connection():
     connection = psycopg2.connect(
-        "host='localhost' dbname='terp' user='postgres' password='123@Ht'")
+        "host='' dbname='' user='' password=''")
     return connection
 
 # get connection API
