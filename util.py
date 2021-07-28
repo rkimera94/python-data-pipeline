@@ -45,9 +45,8 @@ def pg_db_connection(db_host, db_name, db_user, db_pass):
 
 
 
-def pg_connection():
-    connection = psycopg2.connect(
-        "host='' dbname='' user='' password=''")
+def pg_connection(db_host, db_name, db_user, db_pass):
+    connection = psycopg2.connect(f"host={db_host},dbname={db_name},password={db_pass},user={db_user}")
     return connection
 
 # get connection API
@@ -61,7 +60,25 @@ def get_connection(db_type, db_host, db_name, db_user, db_pass):
                                       db_host=db_host,
                                       db_name=db_name
                                       )
+    if db_type == 'postgres_tg':
+        connection = pg_connection(db_user=db_user,
+                                      db_pass=db_pass,
+                                      db_host=db_host,
+                                      db_name=db_name
+                                      )
     return connection
+
+# single database type
+def get_connection_postgres(db_host, db_name, db_user, db_pass):
+    connection = None
+    connection = pg_db_connection(db_user=db_user,
+                                      db_pass=db_pass,
+                                      db_host=db_host,
+                                      db_name=db_name
+                                      )
+    return connection
+
+
 # list of tables to be loaded
 
 

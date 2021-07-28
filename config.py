@@ -18,7 +18,6 @@ DB_DETAILS = {
 
     },
     'target': {
-        'DB_TYPE': 'postgres',
         'DB_NAME': os.environ.get('DB_TARGET'),
         'DB_HOST': os.environ.get('DB_HOST'),
         'DB_PORT': os.environ.get('DB_PORT'),
